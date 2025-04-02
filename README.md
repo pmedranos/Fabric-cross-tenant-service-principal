@@ -3,27 +3,27 @@
 ## 1. Setting Up the Service Principal in Tenant A (Fabric Tenant)
 
 ### Step 1: Create an Enterprise Application
-**A-** Open Azure Portal and navigate to Tenant A (where Fabric is hosted).  
-**B-** Go to **Azure Active Directory > App Registrations**.  
-**C-** Click **+ New Registration** to create a new Enterprise Application.
+1.  Open Azure Portal and navigate to Tenant A (where Fabric is hosted).  
+2.  Go to **Azure Active Directory > App Registrations**.  
+3.  Click **+ New Registration** to create a new Enterprise Application.
 
 ### Step 2: Configure Authentication
-**A-** In App Registrations, locate the newly created application.  
-**B-** Navigate to **Authentication** and click **Add a Platform**.  
+1.  In App Registrations, locate the newly created application.  
+2.  Navigate to **Authentication** and click **Add a Platform**.  
 ![enterprise-app](images/enterprise-app-platform-config.png)
 
-**C-** On the next screen, select **Web**.  
+3.  On the next screen, select **Web**.  
 ![enterprise-app-web](images/enterprise-app-platform-web.png)
 
 
-**D-** Copy and paste the following **Redirect URI**:
+4.  Copy and paste the following **Redirect URI**:
 
 ```
 https://login.microsoftonline.com/common/oauth2/nativeclient
 ```
 
 
-**E-** Click **Configure**.  
+5.  Click **Configure**.  
 
 Still within Authentication Scroll down and you will see the next:
 
@@ -33,25 +33,28 @@ Make sure you choose the options that you see on the screenshot. This should be 
 
 ### Step 3: Assign API Permissions
 
-**A-** Go to **API permissions**.  
-**B-** Click **Add a permission** and choose the necessary APIs.  
-**C-** Ensure the following permissions are included:  
+1.  Go to **API permissions**.
+2.  Click **Add a permission** and choose the necessary APIs.
+3.  Ensure the following permissions are included:  
 ![API Permissions](images/api-permissions.png)
 
-**D-** After adding permissions, click **Grant admin consent**.  
-**E-** For security, consider removing unnecessary permissions, such as Item.Read.All, Lakehouse.Read.All, to minimize access. The unnecessary permissions will depend on what you are sharing or giving access to.
+4.  After adding permissions, click **Grant admin consent**.
+5.  For security, consider removing unnecessary permissions, such as Item.Read.All, Lakehouse.Read.All, to minimize access. The unnecessary permissions will depend on what you are sharing or giving access to.
 
 ### Step 4: Create a Client Secret
-Navigate to **Certificates & secrets**.  
-Click **+ New client secret** and store the generated secret securely.  
-You will not be able to retrieve it again.
+1.	Navigate to **Certificates & secrets**.
+2.	Click **+ New client secret** and create a secret.
+3.	**Store the secret securely** as it will not be visible after creation.
+
 
 ### Step 5: Create a Security Group and Add the SPN
-Go to **Microsoft Entra ID > Groups**.  
-Click **+ New group**, and set the type to **Security**.  
-Add the SPN as a member:  
-![Add SPN to Group](images/add-spn-group.png)
+1.	Go to **Microsoft Entra ID > Groups**.
+2.	Click **+ New group**.
+3.	**Group type** should be set to **Security**.
+  
+![Add SPN to Group](images/security-group.png)
 
+4.	Click on No Members selected and add the SPN to the security group.
 ---
 
 ## 2. Enabling Permissions in Fabric
@@ -72,7 +75,7 @@ Add the security group created earlier to these permissions.
 
 In Fabric, navigate to the workspace where the Data Warehouse resides.  
 Add the SPN as a **Viewer**:  
-![Add SPN to Workspace](images/add-spn-workspace.png)
+![Add SPN to Workspace](images/app-overview2.png)
 
 ---
 
