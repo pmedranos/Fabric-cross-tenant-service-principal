@@ -35,11 +35,12 @@ Make sure you choose the options that you see on the screenshot. This should be 
 
 1.  Go to **API permissions**.
 2.  Click **Add a permission** and choose the necessary APIs.
-3.  Ensure the following permissions are included:  
+3.  Ensure the following permissions are included:
+
 ![API Permissions](images/api-permissions.png)
 
-4.  After adding permissions, click **Grant admin consent**.
-5.  For security, consider removing unnecessary permissions, such as Item.Read.All, Lakehouse.Read.All, to minimize access. The unnecessary permissions will depend on what you are sharing or giving access to.
+5.  After adding permissions, click **Grant admin consent**.
+6.  For security, consider removing unnecessary permissions, such as Item.Read.All, Lakehouse.Read.All, to minimize access. The unnecessary permissions will depend on what you are sharing or giving access to.
 
 ### Step 4: Create a Client Secret
 1.	Navigate to **Certificates & secrets**.
@@ -75,6 +76,7 @@ Make sure you choose the options that you see on the screenshot. This should be 
 
 In Fabric, navigate to the workspace where the Data Warehouse resides.  
 1.  Click on Manage access:
+
 ![manage access workspace](images/workspace_settings.png)
 
 
@@ -89,9 +91,11 @@ In Fabric, navigate to the workspace where the Data Warehouse resides.
 Make sure it is as viewer since it needs to have the ReadData permission which will let the Service Principal access the SQL endpoint.
 You have also the option to share the specific Warehouse or Lakehouse SQL endpoint with the SPN.
 1.  Still within the workspace where the Data Warehouse or Lakehouse is, click on the share button:
+
 ![Share_warehouse](images/share_button_fabric.png)
 
 2.  Add the SPN and make sure to give it only the Read all data using SQL permission, like in the screenshot:
+
 ![Share_warehouse_add_useer](images/grant_access_people.png)
 
 ---
