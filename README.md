@@ -139,7 +139,7 @@ Replace:
 https://app.fabric.microsoft.com/groups/<workspace_ID>/warehouses/<warehouse_ID>
 ```
 Use this information to build the ADF **Linked Service**:  
-![ADF Linked Service Example](images/adf-linked-service.png)
+![ADF Linked Service Example](images/linked-service-adf.png)
 
 ---
 
