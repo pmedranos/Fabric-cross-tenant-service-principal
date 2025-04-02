@@ -54,7 +54,7 @@ Make sure you choose the options that you see on the screenshot. This should be 
   
 ![Add SPN to Group](images/security-group.png)
 
-4.	Click on No Members selected and add the SPN to the security group.
+4.	Click on **No Members selected** and add the SPN to the security group.
 ---
 
 ## 2. Enabling Permissions in Fabric
@@ -87,6 +87,12 @@ In Fabric, navigate to the workspace where the Data Warehouse resides.
 ![Add SPN to Workspace](images/add_user_workspace.png)
 
 Make sure it is as viewer since it needs to have the ReadData permission which will let the Service Principal access the SQL endpoint.
+You have also the option to share the specific Warehouse or Lakehouse SQL endpoint with the SPN.
+1.  Still within the workspace where the Data Warehouse or Lakehouse is, click on the share button:
+![Share_warehouse](images/share_button_fabric.png)
+
+2.  Add the SPN and make sure to give it only the Read all data using SQL permission, like in the screenshot:
+![Share_warehouse_add_useer](images/grant_access_people.png)
 
 ---
 
