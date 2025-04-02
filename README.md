@@ -89,12 +89,13 @@ In Fabric, navigate to the workspace where the Data Warehouse resides.
 ![Add SPN to Workspace](images/add_user_workspace.png)
 
 Make sure it is as viewer since it needs to have the ReadData permission which will let the Service Principal access the SQL endpoint.
+
 You have also the option to share the specific Warehouse or Lakehouse SQL endpoint with the SPN.
-1.  Still within the workspace where the Data Warehouse or Lakehouse is, click on the share button:
+1.  Still within the workspace where the Data Warehouse or Lakehouse is, click on the **share** button:
 
 ![Share_warehouse](images/share_button_fabric.png)
 
-2.  Add the SPN and make sure to give it only the Read all data using SQL permission, like in the screenshot:
+2.  Add the SPN and make sure to give it only the **Read all data using SQL** permission, like in the screenshot:
 
 ![Share_warehouse_add_useer](images/grant_access_people.png)
 
@@ -102,7 +103,7 @@ You have also the option to share the specific Warehouse or Lakehouse SQL endpoi
 
 ## 4. Registering the Service Principal in Tenant B
 
-In Tenant B (ADF side), use the following URL to register the SPN from Tenant A:
+1.  In Tenant B (ADF side), use the following URL to register the SPN from Tenant A:
 
 ```
 https://login.microsoftonline.com/TENANT_B_ID/adminconsent?client_id=APP_CLIENT_ID
@@ -112,7 +113,7 @@ Replace:
 - `TENANT_B_ID` with the tenant ID from Tenant B
 - `APP_CLIENT_ID` with the client ID from the service principal in Tenant A
 
-Accept the permissions prompt to finalize the setup.
+2.  Accept the permissions prompt to finalize the setup.
 
 ---
 
@@ -123,15 +124,20 @@ Accept the permissions prompt to finalize the setup.
 - Application (Client) ID
 - SPN Client Secret
 
+![app overview](images/app-overview2.png)
+
 ### Retrieve Fabric Workspace & Warehouse IDs
 
-In Fabric, click **... > Copy SQL Endpoint** on the target Data Warehouse.  
-The URL format will look like:
+1.	In Fabric, go to the Data Warehouse.
+2.	Click on the ... (More options) and select Copy SQL Endpoint.
+
+![warehouse_example](images/warehouse_example.png)
+
+3.	Extract the Workspace ID and the Warehouse ID from the Fabric URL:
 
 ```
 https://app.fabric.microsoft.com/groups/<workspace_ID>/warehouses/<warehouse_ID>
 ```
-
 Use this information to build the ADF **Linked Service**:  
 ![ADF Linked Service Example](images/adf-linked-service.png)
 
