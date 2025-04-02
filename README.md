@@ -3,16 +3,19 @@
 ## 1. Setting Up the Service Principal in Tenant A (Fabric Tenant)
 
 ### Step 1: Create an Enterprise Application
-Open Azure Portal and navigate to Tenant A (where Fabric is hosted).  
-Go to **Azure Active Directory > App Registrations**.  
-Click **+ New Registration** to create a new Enterprise Application.
+**A-** Open Azure Portal and navigate to Tenant A (where Fabric is hosted).  
+**B-** Go to **Azure Active Directory > App Registrations**.  
+**C-** Click **+ New Registration** to create a new Enterprise Application.
 
 ### Step 2: Configure Authentication
-In App Registrations, locate the newly created application.  
-Navigate to **Authentication** and click **Add a Platform**.  
+**A-** In App Registrations, locate the newly created application.  
+**B-** Navigate to **Authentication** and click **Add a Platform**.  
+![enterprise-app](images/enterprise-app-platform-config.png)
 
-On the next screen, select **Web**.  
-Paste the following Redirect URI:
+**C-** On the next screen, select **Web**.  
+![enterprise-app-web](images/enterprise-app-platform-web.png)
+
+**D-** Copy and paste the following **Redirect URI**:
 
 ```
 https://login.microsoftonline.com/common/oauth2/nativeclient
@@ -20,8 +23,11 @@ https://login.microsoftonline.com/common/oauth2/nativeclient
 
 Click **Configure**.  
 
-Scroll down and configure the remaining authentication settings:  
-![Authentication Settings](images/authentication-settings.png)
+Still within Authentication Scroll down and you will see the next:
+
+![Authentication Settings](images/enterprise-app-platform-authentication.png)
+
+Make sure you choose the options that you see on the screenshot. This should be all within Authentication.
 
 ### Step 3: Assign API Permissions
 Go to **API permissions**.  
