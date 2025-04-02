@@ -59,23 +59,34 @@ Make sure you choose the options that you see on the screenshot. This should be 
 
 ## 2. Enabling Permissions in Fabric
 
-Go to the **Fabric Admin Portal**.  
-Navigate to **Admin settings** and enable the following:
+1.  Go to the **Fabric Admin Portal**.  
+2.  Navigate to **Admin settings** and enable the following:
 
 - ✅ Service principals can use Fabric APIs  
 - ✅ Service principals can access read-only admin APIs  
 - ✅ Service principals can access admin APIs used for updates  
 
-Add the security group created earlier to these permissions.  
-![Fabric Admin Settings](images/fabric-admin-settings.png)
+3.  Add the security group created earlier to these permissions.  
+
 
 ---
 
 ## 3. Grant Access to the Fabric Workspace
 
 In Fabric, navigate to the workspace where the Data Warehouse resides.  
-Add the SPN as a **Viewer**:  
-![Add SPN to Workspace](images/app-overview2.png)
+1.  Click on Manage access:
+![manage access workspace](images/workspace_settings.png)
+
+
+2.  Then click on **Add people or groups**:
+
+![add people or group to ws](images/add_to_workspace.png)
+
+3.  Add the SPN as a **Viewer**:
+
+![Add SPN to Workspace](images/add_user_workspace.png)
+
+Make sure it is as viewer since it needs to have the ReadData permission which will let the Service Principal access the SQL endpoint.
 
 ---
 
